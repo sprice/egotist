@@ -4,7 +4,10 @@ class Controller_Welcome extends Controller {
 
 	public function action_index()
 	{
-		$this->response->body('hello, world!');
+		$data = array();
+		$data['site_name'] = 'Egotist';
+		$data['random'] = rand(1, 10);
+		$this->response->body(View::factory('welcome', $data));
 	}
 
 } // End Welcome
