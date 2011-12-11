@@ -1,0 +1,1 @@
+<p>Copyright &copy; 2011 - <?php echo $site_name; ?></p>

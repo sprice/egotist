@@ -1,13 +1,16 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Welcome extends Controller {
+class Controller_Welcome extends Controller_Application {
 
 	public function action_index()
 	{
-		$data = array();
-		$data['site_name'] = 'Egotist';
-		$data['random'] = rand(1, 10);
-		$this->response->body(View::factory('welcome', $data));
+
+		$content = View::factory('welcome')
+		->bind('random', $random);
+		$random = rand(1,10);
+
+		$this->template->content = $content;
+
 	}
 
 } // End Welcome
